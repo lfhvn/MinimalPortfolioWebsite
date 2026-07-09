@@ -11,6 +11,7 @@ type Project = {
   year: string;
   brief: string;
   contribution: string;
+  highlights?: string[];
   outcome: string;
   media?: 'youtube' | 'portal-image';
   links?: { label: string; url: string }[];
@@ -21,13 +22,20 @@ const projects: Record<string, Project> = {
     title: 'Ray-Ban Meta',
     role: 'Principal Product Designer',
     domain: 'AI on Wearables',
-    year: '2023–Present',
+    year: '2019–Present',
     brief:
-      'Designed the core AI experience for Ray-Ban Meta smart glasses, shaping how multimodal assistance works on a device with no screen. The product has sold more than two million units since launch.',
+      'From early smart-glasses concept work in 2019 through Ray-Ban Stories — which created the category — to Ray-Ban Meta, the first Llama-powered AI glasses. I designed the core AI experience: how multimodal assistance works on a device with no screen. The product has sold more than two million units since launch.',
     contribution:
-      'Defined the interaction model for voice, attention, signaling, proactive assistance, privacy, and failure handling. Partnered with engineering, research, and language/model teams on prompt iteration, response quality, and evaluation criteria for Llama-powered experiences.',
+      'Defined the interaction model for voice, attention, signaling, proactive assistance, privacy, and failure handling. When Meta decided in spring 2023 to ship Llama on Ray-Ban Meta within months, I was the single-threaded design owner of the LLM experience — working with research science, ML engineering, and linguists on model and prompt iteration, quality metrics, and evals.',
+    highlights: [
+      'Hardware UX for a screenless device: capacitive touch behavior, LED signaling for both wearer and bystanders, and earcons.',
+      '“Experience prototyping” — remote, first-person interactive video prototypes developed when COVID-19 shut down in-person research, used to validate use cases and flows.',
+      'An on-device model architecture for hands-free messaging that preserved end-to-end encryption in WhatsApp and Messenger — and unlocked offline device actions as a side effect.',
+      'A lock-screen attention system and sound design solving phone-OS throttling of live voice interactions — work that became a patent (US 12,131,733).',
+      'A north-star interaction framework for multimodal, conversational, proactive AI — when to get AI’s attention, what to show it, when it can act, and how it signals what it senses.',
+    ],
     outcome:
-      'Ray-Ban Meta was recognized with iF Gold and IDEA awards in 2024; its predecessor, Ray-Ban Stories, received iF Gold and Red Dot Best of the Best in 2022.',
+      'Ray-Ban Stories created the category; Ray-Ban Meta found product-market fit, selling faster than it could be produced. Recognized with iF Gold and IDEA (2024), Red Dot (2025), and — for Ray-Ban Stories — iF Gold and Red Dot Best of the Best (2022).',
     media: 'youtube',
   },
   'voice-platforms': {
@@ -38,11 +46,17 @@ const projects: Record<string, Project> = {
     brief:
       'Set direction for Meta’s voice and conversational AI tooling ecosystem — Wit.ai, Voice SDK, and Assistant Studio — turning complex AI capabilities into usable workflows for developers and partners.',
     contribution:
-      'Led a multidisciplinary design team across conversational AI, AR/VR platform, and builder-facing tools.',
+      'Led a team of thirteen designers — product designers, conversation designers, and design prototypers — setting strategy across the platform portfolio and owning creative direction for flagship demo projects.',
+    highlights: [
+      'Assistant Studio, the internal tool used to build, test, and debug Meta AI interactions — including a visual canvas-based editor for AI conversations.',
+      'The World Beyond, a Presence Platform showcase where players talk to Oppy, a virtual alien, by voice — demoed in the Meta Connect keynote.',
+      'Whisperer, an open-source voice-driven game co-developed with BUCK, shipped to Quest App Lab as a reference for voice in VR.',
+    ],
     outcome:
-      'The platform work put natural-language understanding and voice interaction into the hands of external developers building for Quest and beyond.',
+      'Across Wit.ai, the Quest Presence Platform, Spark AR, and Assistant Studio, the team enabled more than 300,000 developers to build voice- and language-powered features.',
     links: [
       { label: 'Wit.ai', url: 'https://wit.ai' },
+      { label: 'Whisperer on GitHub', url: 'https://github.com/oculus-samples/voicesdk-samples-whisperer' },
     ],
   },
   'portal-quest-assistant': {
@@ -51,11 +65,17 @@ const projects: Record<string, Project> = {
     domain: 'Conversational AI UX',
     year: '2018–2020',
     brief:
-      'First design hire for assistant experiences across Portal and Oculus/Quest — defining foundational voice and conversational interaction patterns for consumer AI hardware.',
+      'First full-time design hire on the Assistant team — defining foundational voice and conversational interaction patterns for consumer AI hardware across Portal and Oculus/Quest.',
     contribution:
       'Designed end-to-end assistant behavior across activation, listening, feedback, privacy, and recovery in constrained device environments.',
+    highlights: [
+      'Portal’s attention system and assistant visual identity, including motion and sound design.',
+      '“Hey Portal, Good Morning” — an AI-powered personalized morning routine surfacing events, friend activity, and suggestions.',
+      'Privacy UX for Portal setup and voice-interaction history in Facebook’s activity center.',
+      'The assistant-layer interaction model and design system for Quest — where voice addressed the form factor’s hardest problems: navigating layered settings and entering text in VR.',
+    ],
     outcome:
-      'The interaction patterns established here carried forward into Meta’s later voice products, from Quest voice commands to AI on smart glasses.',
+      'Every Portal generation shipped with voice and AI features; Quest gained voice navigation. The interaction patterns established here carried forward into AI on smart glasses.',
     media: 'portal-image',
   },
   'whisperer': {
@@ -189,6 +209,31 @@ export function ProjectPage() {
             {project.contribution}
           </p>
         </div>
+
+        {project.highlights && (
+          <div>
+            <div
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '11px',
+                letterSpacing: '0.08em',
+                color: 'var(--text-tertiary)',
+                textTransform: 'uppercase',
+                marginBottom: '20px',
+              }}
+            >
+              Highlights
+            </div>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '14px', maxWidth: '60ch' }}>
+              {project.highlights.map((item) => (
+                <li key={item} style={{ display: 'flex', gap: '14px' }}>
+                  <span aria-hidden="true" style={{ color: 'var(--text-tertiary)', flexShrink: 0 }}>—</span>
+                  <span style={{ fontSize: '15px', lineHeight: 1.75, color: 'var(--text-secondary)' }}>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div>
           <div

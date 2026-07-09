@@ -28,7 +28,7 @@ const experience = [
     role: 'Senior Product Design Manager, AI & AR/VR Platforms',
     org: 'Meta Reality Labs',
     detail:
-      'Set direction for Meta’s voice and conversational AI tooling — Wit.ai, Voice SDK, and Assistant Studio — and led a multidisciplinary design team.',
+      'Set direction for Meta’s voice and conversational AI tooling — Wit.ai, Voice SDK, and Assistant Studio — leading a team of thirteen designers and enabling 300,000+ developers to build voice- and language-powered features.',
   },
   {
     years: '2018–2020',
