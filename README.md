@@ -1,11 +1,23 @@
+# lhm.works
 
-  # Minimal Portfolio Website
+Personal site for Leif Haven Martinson — product designer working on AI, writer (as Leif Haven), and inventor on patents in assistant systems.
 
-  This is a code bundle for Minimal Portfolio Website. The original project is available at https://www.figma.com/design/8m2q2n8TL20zZtQP8Scw1p/Minimal-Portfolio-Website.
+Minimal by design: React + Vite + Tailwind, a 700px column, three typefaces, no backend.
 
-  ## Running the code
+## Structure
 
-  Run `npm i` to install the dependencies.
+- `/` — name, selected work, writing, patents, contact
+- `/work`, `/work/:slug` — career highlights (Ray-Ban Meta, voice platforms, Portal/Quest assistant UX, Whisperer)
+- `/writing` — books and publications as Leif Haven
+- `/patents` — all patents and published applications
+- `/about` — full experience, education, recognition
 
-  Run `npm run dev` to start the development server.
-  
+All facts are sourced from the CV (v4, March 2026) and verified public records. Update content directly in `src/components/pages/`.
+
+## Running
+
+```
+npm install
+npm run dev    # http://localhost:3000
+npm run build  # outputs to build/
+```
