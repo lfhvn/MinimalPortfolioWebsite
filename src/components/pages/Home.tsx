@@ -7,6 +7,11 @@ const work = [
     description: 'The core AI experience for smart glasses — 2M+ units sold.',
   },
   {
+    slug: 'model-behavior',
+    title: 'Model Behavior on AI Glasses',
+    description: 'A phone call, not a command line — response style, evals, and the interaction model behind Live AI.',
+  },
+  {
     slug: 'voice-platforms',
     title: 'Voice & Conversational AI Platforms',
     description: 'Wit.ai, Voice SDK, and Assistant Studio — Meta’s developer tooling for voice.',
@@ -68,7 +73,7 @@ export function Home() {
             marginBottom: '8px',
           }}
         >
-          Product designer working on AI — assistants, voice, and multimodal wearables at Meta Reality Labs. Founder of Hidden Layer, an independent research practice in AI interpretability and model behavior design.
+          I design how people interact with AI — assistants, voice, and multimodal wearables at Meta Reality Labs. Founder of Hidden Layer, an independent research practice in AI interpretability and model behavior design.
         </p>
         <p
           style={{

@@ -7,6 +7,11 @@ const work = [
     description: 'The core AI experience for smart glasses — 2M+ units sold.',
   },
   {
+    slug: 'model-behavior',
+    title: 'Model Behavior on AI Glasses',
+    description: 'A phone call, not a command line — response style, evals, and the interaction model behind Live AI.',
+  },
+  {
     slug: 'voice-platforms',
     title: 'Voice & Conversational AI Platforms',
     description: 'Wit.ai, Voice SDK, and Assistant Studio — Meta’s developer tooling for voice.',

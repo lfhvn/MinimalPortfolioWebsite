@@ -32,11 +32,30 @@ const projects: Record<string, Project> = {
       '“Experience prototyping” — remote, first-person interactive video prototypes developed when COVID-19 shut down in-person research, used to validate use cases and flows.',
       'An on-device model architecture for hands-free messaging that preserved end-to-end encryption in WhatsApp and Messenger — and unlocked offline device actions as a side effect.',
       'A lock-screen attention system and sound design solving phone-OS throttling of live voice interactions — work that became a patent (US 12,131,733).',
-      'A north-star interaction framework for multimodal, conversational, proactive AI — when to get AI’s attention, what to show it, when it can act, and how it signals what it senses.',
+      'A north-star interaction framework for multimodal, conversational, proactive AI — when to get AI’s attention, what to show it, when it can act, and how it signals what it senses. This model became the foundation for Live AI.',
+      'Agent strategy and design direction for Meta AI on wearables (2024–2025): core UX patterns for agentic tasks, async tasks, and deep research.',
     ],
     outcome:
       'Ray-Ban Stories created the category; Ray-Ban Meta found product-market fit, selling faster than it could be produced. Recognized with iF Gold and IDEA (2024), Red Dot (2025), and — for Ray-Ban Stories — iF Gold and Red Dot Best of the Best (2022).',
     media: 'youtube',
+  },
+  'model-behavior': {
+    title: 'Model Behavior on AI Glasses',
+    role: 'Design Lead, Model Behavior & Interaction Model',
+    domain: 'AI on Wearables',
+    year: '2023–Present',
+    brief:
+      'Shipping a vanilla chat model on a voice-first wearable didn’t work: responses were too long, formatted like text, full of unnecessary follow-up questions — and the model didn’t know it was on glasses. Research showed people tire of repeating the wake word. The hypothesis: make the interaction feel natural and conversational, and usage would follow.',
+    contribution:
+      'Led design for model behavior, response style, and the interaction model across wearables. The organizing idea: AI on glasses should feel like a phone call, not a command line — say the wake word once, then just talk; a data-driven listening window instead of a fixed timeout; interrupt freely, full duplex; end the conversation naturally.',
+    highlights: [
+      'Natural dismissal — “that’s all,” “sounds good,” “thanks” trigger a graceful close, and only positive stop intents get a response, so the AI never replies when you’re clearly done.',
+      'Sidespeech and device-directed speech detection — contextual classifiers that decide whether the wearer is talking to the device, to another person, or being talked past.',
+      'Response style for voice — “62 and cloudy in SF, you might want a light jacket” instead of a paragraph of weather data.',
+      'Design as a test suite — “it should feel natural” is not a metric, so I built the design-side source of truth for model style and behavior, baked into metrics, evals, data generation, annotation guidelines, and an LLM judge.',
+    ],
+    outcome:
+      'The hypothesis held: a more natural conversational experience drove double-digit growth in AI usage, with dramatic gains in measured conversationality and style match. The same work surfaced real tradeoffs — voice-optimized brevity sometimes costs correctness — which now shape the next iteration. This interaction model became the foundation for Live AI.',
   },
   'voice-platforms': {
     title: 'Voice & Conversational AI Platforms',
